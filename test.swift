@@ -1,1 +1,1 @@
-struct
+print('hello world')
