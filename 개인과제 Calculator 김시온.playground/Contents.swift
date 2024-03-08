@@ -59,7 +59,6 @@ class Calculator0 {
             return 0
         } else {
             return num1 / num2}
-        return num1 / num2
     }
 }
 let result0 = Calculator0(name: "계산식을 입력하세요.")
@@ -97,8 +96,8 @@ class Calculator2 {
                     return 0
                 } else {
                     // return Double(Int(num1)/Int(num2))
-                    return abs((num1/num2) * num2 - num1)
-                    return num1.truncatingRemainder(dividingBy:num2)
+                    // return abs((num1/num2) * num2 - num1)
+                    return num1.truncatingRemainder(dividingBy: num2)
                 }
             default:
                 print("계산식을 입력하세요.")
@@ -175,17 +174,6 @@ print("계산결과는 \(String(describing: result3.divideOperation.divide(6,5))
 
 // ------------------------------- 미완성: 레벨 4  ----------------------------//
 
-class Calculator4 {
-    var num1 : Double
-    var num2 : Double
-    
-    init(num1: Double, num2: Double) {
-        self.num1 = num1
-        self.num2 = num2
-    }
-    let result4 = Calculator4(num1: 6, num2: 5)
-}
-            
 class AbstractOperation {
     var addOperation : AddOperation4
     var subtractOperation : SubtractOperation4
@@ -214,39 +202,40 @@ class AbstractOperation {
 }
 
 class AddOperation4: AbstractOperation {
-    override func add4() {
-        let resultAdd4 = super.addOperation(6, 5)
+    override func add4(_ num1:Double, _ num2:Double) -> Double{
+        let resultAdd4 = super.add4(6, 5)
         print("계산결과는 \(resultAdd4)입니다.")
-    }
+        }
     }
     
     class SubtractOperation4: AbstractOperation {
-       override func subtract4() {
-           let resultSubtract4 = super.subtractOperation()
+        override func subtract4(_ num1:Double, _ num2:Double) -> Double{
+           let resultSubtract4 = super.subtract4(6, 5)
             print("계산결과는 \(resultSubtract4)입니다.")
         }
     }
     
     class MultiplyOperation4: AbstractOperation {
-        override func multiply4() {
-            let resultMultiply4 = super.multiplyOperation()
+        override func multiply4(_ num1:Double, _ num2:Double) -> Double{
+            let resultMultiply4 = super.multiply4(6, 5)
             print("계산결과는 \(resultMultiply4)입니다.")
         }
     }
     
     class DivideOperation4: AbstractOperation {
-        func division4()  {
-            let resultDivide4 = super.divisionOperation()
+        override func division4(_ num1:Double, _ num2:Double) -> Double{
+            let resultDivide4 = super.division4(6, 5)
             print("계산결과는 \(resultDivide4))입니다.")
         }
     }
+
+class Calculator4 {
+    var num1 : Double
+    var num2 : Double
     
-
-print("계산결과는 \(resultAdd4(6,5))입니다.")
-print("계산결과는 \(resultSubtract4(6,5))입니다.")
-print("계산결과는 \(resultMultiply4(6,5))입니다.")
-print("계산결과는 \(String(describing: resultDivide4(6,5)))입니다.")
-
-
-
-
+    init(num1: Double, num2: Double) {
+        self.num1 = num1
+        self.num2 = num2
+    }
+    let result4 = Calculator4(num1: 6, num2: 5)
+}
