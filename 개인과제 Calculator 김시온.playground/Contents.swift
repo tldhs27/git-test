@@ -201,10 +201,11 @@ class AbstractOperation {
     }
 }
 
-class AddOperation4: AbstractOperation {
+    class AddOperation4: AbstractOperation {
     override func add4(_ num1:Double, _ num2:Double) -> Double{
         let resultAdd4 = super.add4(6, 5)
         print("계산결과는 \(resultAdd4)입니다.")
+        return resultAdd4
         }
     }
     
@@ -212,6 +213,7 @@ class AddOperation4: AbstractOperation {
         override func subtract4(_ num1:Double, _ num2:Double) -> Double{
            let resultSubtract4 = super.subtract4(6, 5)
             print("계산결과는 \(resultSubtract4)입니다.")
+            return resultSubtract4
         }
     }
     
@@ -219,6 +221,7 @@ class AddOperation4: AbstractOperation {
         override func multiply4(_ num1:Double, _ num2:Double) -> Double{
             let resultMultiply4 = super.multiply4(6, 5)
             print("계산결과는 \(resultMultiply4)입니다.")
+            return resultSubtract4
         }
     }
     
